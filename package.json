@@ -1,0 +1,14 @@
+{
+  "name": "uno-online",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "bun --cwd apps/web dev",
+    "dev:api": "bun --cwd apps/api uvicorn src.main:app --reload --port 8000",
+    "build": "bun run --filter './apps/*' build",
+    "lint": "bun run --filter './apps/*' lint"
+  }
+}

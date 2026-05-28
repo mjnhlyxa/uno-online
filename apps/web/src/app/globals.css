@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-page: #0d1117;
+  --bg-surface: #161b22;
+  --bg-elevated: #21262d;
+  --bg-hover: #30363d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+  --success: #3fb950;
+  --error: #f85149;
+  --warning: #d29922;
+  --info: #58a6ff;
+  --border: #30363d;
+  --border-focus: #58a6ff;
+  --uno-red: #E41E26;
+  --uno-yellow: #F9E000;
+  --uno-green: #00A84F;
+  --uno-blue: #0072CE;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 1s infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+}
+
+.animate-uno-pulse {
+  animation: uno-pulse 1s infinite;
+}
+
+@keyframes uno-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(228, 30, 38, 0.5); }
+  50% { transform: scale(1.02); box-shadow: 0 0 20px 4px rgba(228, 30, 38, 0.4); }
+}
