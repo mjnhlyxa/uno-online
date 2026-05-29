@@ -196,7 +196,7 @@ export default function RoomPage() {
 
   const currentPlayerIndex = gameState?.players.findIndex((p) => p.id === playerId) ?? -1;
   const isMyTurn = currentPlayerIndex === gameState?.currentTurnIndex;
-  const myHand = gameState?.players[currentPlayerIndex]?.hand || [];
+  const myHand = (gameState?.players[currentPlayerIndex] as any)?.hand || [];
   const topCard = gameState?.discardPile?.[0] as Card | null;
   const activeColor = (gameState?.activeColor || topCard?.color) as Color;
   const pendingDraw = gameState?.pendingDrawCount || 0;
@@ -288,7 +288,7 @@ export default function RoomPage() {
         <div className="bg-bg-surface rounded-xl p-4">
           <div className="text-sm text-text-secondary mb-2">Your Hand</div>
           <div className="flex gap-2 overflow-x-auto pb-2">
-            {myHand.map((card, idx) => {
+            {myHand.map((card: any, idx: number) => {
               const isPlayable = playableIndices.includes(idx);
               const isSelected = selectedCardIndex === idx;
               return (
