@@ -10,3 +10,4 @@ __pycache__/
 bun.lockb
 .DS_Store
 *.log
+.vercel
